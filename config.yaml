@@ -4,13 +4,13 @@ gaps:
 
 general:
   # Whether to show floating windows as always on top.
-  show_floating_on_top: false
+  show_floating_on_top: true
 
 bar:
-  # enabled: true
+  enabled: true
   height: "30px"
-  position: "bottom"
-  # always_on_top: true
+  position: "top"
+  always_on_top: true
   opacity: 1.0
   # background: "#181825"
   background: "#11111b"
