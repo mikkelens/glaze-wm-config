@@ -9,8 +9,8 @@ general:
 bar:
   enabled: true
   height: "30px"
-  position: "top"
-  always_on_top: true
+  position: "bottom"
+  always_on_top: false
   opacity: 1.0
   # background: "#181825"
   background: "#11111b"
@@ -78,10 +78,14 @@ window_rules:
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
     match_class_name: "#32770"
+  - command: "set floating"
+    match_process_name: "voicemeeter"
 
   # Some applications (eg. Steam) have borders that extend past the normal border size.
   - command: "resize borders 0px -7px -7px -7px"
     match_process_name: "steam"
+  - command: "resize borders 0px -7px -7px -7px"
+    match_process_name: "fork"
 
 binding_modes:
   - name: "resize"
