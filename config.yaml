@@ -6,6 +6,13 @@ general:
   # Whether to show floating windows as always on top.
   show_floating_on_top: false
 
+workspaces:
+# fix for 3 monitor setup with incorrect ID
+- name: "1"
+  bind_to_monitor: 3
+- name: "2"
+  bind_to_monitor: 2
+
 bar:
   # enabled: true
   height: "30px"
