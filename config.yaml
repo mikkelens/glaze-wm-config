@@ -16,7 +16,7 @@ workspaces:
 bar:
   enabled: true
   height: "30px"
-  position: "bottom"
+  position: "top"
   always_on_top: false
   opacity: 1.0
   # background: "#181825"
@@ -93,6 +93,12 @@ window_rules:
     match_process_name: "steam"
   - command: "resize borders 0px -7px -7px -7px"
     match_process_name: "fork"
+
+  # fix for screen snipping/snip and sketch/win+s screenshot key
+  - command: "ignore"
+    match_title: "Screen Snipping"
+  - command: "ignore"
+    match_process_name: "/ScreenSketch|ScreenClippingHost/"
 
 binding_modes:
   - name: "resize"
