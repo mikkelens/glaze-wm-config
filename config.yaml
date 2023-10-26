@@ -4,7 +4,7 @@ gaps:
 
 general:
   # Whether to show floating windows as always on top.
-  show_floating_on_top: false
+  show_floating_on_top: true
 
   # Amount to move floating windows by (eg. when using `alt+<hjkl>` on a floating window)
   floating_window_move_amount: "5%"
@@ -133,7 +133,7 @@ window_rules:
 
   # Some applications (eg. Steam) have borders that extend past the normal border size.
   - command: "resize borders 0px -7px -7px -7px"
-    match_process_name: "/steam|fork/"
+    match_process_name: "/steam|steamwebhelper|Fork/"
 
   # fix for screen snipping/snip and sketch/win+s screenshot key
   - command: "ignore"
@@ -227,7 +227,7 @@ keybindings:
 
   # Launch CMD terminal (alternatively `exec wt` or `exec %ProgramFiles%/Git/git-bash.exe`
   # to start Windows Terminal and Git Bash respectively.
-  - command: "exec wt"
+  - command: "exec wt" # originally "exec pwsh"
     binding: "Alt+Enter"
 
   # Focus the workspace that last had focus.
