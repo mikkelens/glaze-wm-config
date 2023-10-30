@@ -51,15 +51,15 @@ bar:
       foreground: "#cdd6f4"
   components_right:
     - type: "cpu"
-      label: "cpu{{percent_usage}%}"
+      label: "cpu({percent_usage}%)"
       refresh_interval_ms: 1000
       background: "#181825"
       padding: "0 4px"
     # - type: "gpu"
-      # label: "GPU: {percent_usage}%"
+      # label: "gpu({percent_usage}%)"
       # refresh_interval_ms: 1000
     - type: "memory"
-      label: "ram{{percent_usage}%}"
+      label: "ram({percent_usage}%)"
       refresh_interval_ms: 1000
       background: "#181825"
       padding: "0 4px"
@@ -112,21 +112,21 @@ window_rules:
   # the WM as admin.
   - command: "ignore"
     match_process_name: "Taskmgr"
-    match_title: "/.*/"
+    # match_title: "/.*/"
 
   - command: "ignore"
     match_class_name: "Message"
-    match_title: "/.*/"
+    # match_title: "/.*/"
 
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
     match_class_name: "/#32770|#32768/"
-    match_title: "/.*/"
+    # match_title: "/.*/"
   
   # certain programs should not tile for jank reasons
   - command: "set floating"
     match_process_name: "/voicemeeter|WizTree64|Godot.*|javaw/"
-    match_title: "/.*/"
+    # match_title: "/.*/"
 
   - command: "set floating"
     match_title: "/Welcome|Settings|Internal Error|App/" # jetbrains IDE floats or bevy default app
