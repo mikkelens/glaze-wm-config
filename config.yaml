@@ -129,7 +129,7 @@ window_rules:
     # match_title: "/.*/"
 
   - command: "set floating"
-    match_title: "/Welcome|Settings|Internal Error|App/" # jetbrains IDE floats or bevy default app
+    match_title: "/Welcome|Settings|Inline|Refactor|Reformat|Internal Error|App/" # jetbrains IDE floats or bevy default app
 
   # Some applications (eg. Steam) have borders that extend past the normal border size.
   - command: "resize borders 0px -7px -7px -7px"
