@@ -93,7 +93,7 @@ bar:
 
 workspaces:
   - name: "1"
-    bind_to_monitor: 1 # defaults 1 to main screen
+    bind_to_monitor: 2 # defaults 1 to main screen
     # bind_to_monitor: 3
   - name: "2"
     # bind_to_monitor: 1
@@ -106,13 +106,17 @@ workspaces:
   - name: "8"
   - name: "9"
   - name: "10"
-    bind_to_monitor: 2 # defaults 10 to second screen
+    bind_to_monitor: 1 # defaults 10 to second screen
 
 window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
   # the WM as admin.
   - command: "ignore"
     match_process_name: "Taskmgr"
+    # match_title: "/.*/"
+
+  - command: "ignore"
+    match_process_name: "voicemeeter8"
     # match_title: "/.*/"
 
   - command: "ignore"
@@ -126,7 +130,7 @@ window_rules:
   
   # certain programs should not tile for jank reasons
   - command: "set floating"
-    match_process_name: "/voicemeeter|WizTree64|Godot.*|javaw/"
+    match_process_name: "/WizTree64|Godot.*|javaw/"
     # match_title: "/.*/"
 
   - command: "set floating"
