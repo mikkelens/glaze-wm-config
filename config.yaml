@@ -1,6 +1,6 @@
 gaps:
-  inner_gap: 0
-  outer_gap: 0
+  inner_gap: 8
+  outer_gap: 8
 
 general:
   # Whether to show floating windows as always on top.
@@ -11,7 +11,7 @@ general:
 
   # Whether to globally enable/disable window transition animations (on minimize, close,
   # etc). Set to 'unchanged' to make no setting changes.
-  window_animations: "unchanged"
+  window_animations: "false"
 
 bar:
   enabled: true
