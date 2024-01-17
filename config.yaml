@@ -93,7 +93,7 @@ bar:
 
 workspaces:
   - name: "1"
-    bind_to_monitor: 2 # defaults 1 to main screen
+    bind_to_monitor: 2 # defaults "1" to main screen "2"
     # bind_to_monitor: 3
   - name: "2"
     # bind_to_monitor: 1
@@ -106,7 +106,7 @@ workspaces:
   - name: "8"
   - name: "9"
   - name: "10"
-    bind_to_monitor: 1 # defaults 10 to second screen
+    bind_to_monitor: 1 # defaults "10" to second screen "1"
 
 window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
@@ -134,7 +134,7 @@ window_rules:
     # match_title: "/.*/"
 
   - command: "set floating"
-    match_title: "/Welcome|Settings|Inline|Refactor|Reformat|Open File|Run/Debug Configurations|Select Methods|Internal Error|App/" # jetbrains IDE floats or bevy default app
+    match_title: "/Welcome|Settings|Inline|Refactor|Reformat|Open File|Run/Debug Configurations|Select Methods|Internal Error|Environment Variables/" # jetbrains IDE floats
 
   # Some applications (eg. Steam) have borders that extend past the normal border size.
   - command: "resize borders 0px -7px -7px -7px"
@@ -145,6 +145,9 @@ window_rules:
     match_title: "Screen Snipping"
   - command: "ignore"
     match_process_name: "/ScreenSketch|ScreenClippingHost/"
+
+  - command: "move to workspace 10"
+    match_title: "App" # default bevy app
 
 binding_modes:
   - name: "resize"
