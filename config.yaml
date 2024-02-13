@@ -1,6 +1,6 @@
 gaps:
-  inner_gap: 8
-  outer_gap: 8
+  inner_gap: 6
+  outer_gap: 6
 
 general:
   # Whether to show floating windows as always on top.
@@ -52,15 +52,17 @@ bar:
   components_right:
     - type: "cpu"
       label: "cpu({percent_usage}%)"
-      refresh_interval_ms: 1000
+      refresh_interval_ms: 2000
       background: "#181825"
       padding: "0 4px"
-    # - type: "gpu"
-      # label: "gpu({percent_usage}%)"
-      # refresh_interval_ms: 1000
     - type: "memory"
       label: "ram({percent_usage}%)"
-      refresh_interval_ms: 1000
+      refresh_interval_ms: 2000
+      background: "#181825"
+      padding: "0 4px"
+    - type: "gpu"
+      label: "gpu({percent_usage}%)"
+      refresh_interval_ms: 2000
       background: "#181825"
       padding: "0 4px"
     # - type: "network"
@@ -93,12 +95,10 @@ bar:
 
 workspaces:
   - name: "1"
-    bind_to_monitor: 2 # defaults "1" to main screen "2"
-    # bind_to_monitor: 3
+    bind_to_monitor: 2 # see windows display settings for monitor identification
   - name: "2"
-    # bind_to_monitor: 1
+    bind_to_monitor: 1
   - name: "3"
-    # bind_to_monitor: 2
   - name: "4"
   - name: "5"
   - name: "6"
@@ -106,35 +106,36 @@ workspaces:
   - name: "8"
   - name: "9"
   - name: "10"
-    bind_to_monitor: 1 # defaults "10" to second screen "1"
+    bind_to_monitor: 3 # topleft monitor
 
 window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
   # the WM as admin.
-  - command: "ignore"
-    match_process_name: "Taskmgr"
+  # - command: "ignore"
+    # match_process_name: "Taskmgr"
     # match_title: "/.*/"
 
-  - command: "ignore"
+  - command: "move to workspace 10"
     match_process_name: "voicemeeter8"
-    # match_title: "/.*/"
 
   - command: "ignore"
-    match_class_name: "Message"
-    # match_title: "/.*/"
+    match_process_name: "/voicemeeter8|Taskmgr|Message/"
 
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
-    match_class_name: "/#32770|#32768/"
-    # match_title: "/.*/"
+    match_class_name: "/#32770|#32768|SunAwtDialog/" # also fixes jetbrains IDE dialog winodws
   
   # certain programs should not tile for jank reasons
   - command: "set floating"
     match_process_name: "/WizTree64|Godot.*|javaw/"
-    # match_title: "/.*/"
 
-  - command: "set floating"
-    match_title: "/Welcome|Settings|Inline|Refactor|Reformat|Open File|Run/Debug Configurations|Select Methods|Internal Error|Environment Variables/" # jetbrains IDE floats
+  - command: "ignore"
+    match_class_name: "Afx:00D60000:8:00010003:00000000:00B1086D" # some old window class
+
+  # - command: "set floating"
+    # match_process_name: "/rustrover64|rider64|idea64|clion64/"
+    # match_class_name: "SunAwtDialog"
+    # match_title: "/Welcome|Settings|Inline|Refactor|Reformat|Open File|Run/Debug Configurations|Select Methods|Internal Error|Environment Variables/" # jetbrains IDE floats
 
   # Some applications (eg. Steam) have borders that extend past the normal border size.
   - command: "resize borders 0px -7px -7px -7px"
