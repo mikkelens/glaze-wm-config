@@ -60,11 +60,11 @@ bar:
       refresh_interval_ms: 2000
       background: "#181825"
       padding: "0 4px"
-    - type: "gpu"
-      label: "gpu({percent_usage}%)"
-      refresh_interval_ms: 2000
-      background: "#181825"
-      padding: "0 4px"
+    # - type: "gpu"
+    #   label: "gpu({percent_usage}%)"
+    #   refresh_interval_ms: 2000
+    #   background: "#181825"
+    #   padding: "0 4px"
     # - type: "network"
     #   label_no_internet: "NC "
     #   label_ethernet: "Eth "
@@ -95,9 +95,9 @@ bar:
 
 workspaces:
   - name: "1"
-    bind_to_monitor: 2 # see windows display settings for monitor identification
+    bind_to_monitor: 1 # maybe see windows display settings for monitor identification
   - name: "2"
-    bind_to_monitor: 1
+    bind_to_monitor: 2
   - name: "3"
   - name: "4"
   - name: "5"
@@ -130,7 +130,7 @@ window_rules:
     match_process_name: "/WizTree64|Godot.*|javaw/"
 
   - command: "ignore"
-    match_class_name: "Afx:00D60000:8:00010003:00000000:00B1086D" # some old window class
+    match_class_name: "/Afx:00D60000:8:00010003:00000000:00B1086D|WdcWindow/" # some old window class
 
   # - command: "set floating"
     # match_process_name: "/rustrover64|rider64|idea64|clion64/"
