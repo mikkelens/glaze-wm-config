@@ -93,12 +93,13 @@ bar:
       # time_formatting: "hh:mm tt  ddd MMM d"
       # margin: "0 0 0 10px"
 
-workspaces:
+workspaces: # maybe see windows display settings for monitor identification
   - name: "1"
-    bind_to_monitor: 1 # maybe see windows display settings for monitor identification
+    bind_to_monitor: 3 # left
   - name: "2"
-    bind_to_monitor: 2
+    bind_to_monitor: 1 # middle
   - name: "3"
+    bind_to_monitor: 2 # right
   - name: "4"
   - name: "5"
   - name: "6"
@@ -106,7 +107,7 @@ workspaces:
   - name: "8"
   - name: "9"
   - name: "10"
-    bind_to_monitor: 3 # topleft monitor
+    bind_to_monitor: 2 # also right(?)
 
 window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
