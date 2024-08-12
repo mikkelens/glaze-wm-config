@@ -198,7 +198,6 @@ keybindings:
 
   # Re-evaluate configuration file.
   - commands: [
-        "shell-exec taskkill /im 'zebar.exe' /f",
         'wm-reload-config',
         "shell-exec %userprofile%/.glzr/zebar/restart.bat"
       ]
