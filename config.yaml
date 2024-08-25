@@ -4,7 +4,7 @@ general:
   startup_commands: ['shell-exec %userprofile%/.glzr/zebar/start.bat']
 
   # Whether to automatically focus windows underneath the cursor.
-  focus_follows_cursor: false
+  focus_follows_cursor: true
 
   # Whether to switch back and forth between the previously focused
   # workspace when focusing the current workspace.
@@ -60,12 +60,12 @@ window_behavior:
       centered: true
 
       # Whether to show floating windows as always on top.
-      shown_on_top: false
+      shown_on_top: true
 
     fullscreen:
       # Maximize the window if possible. If the window doesn't have a
       # maximize button, then it'll be fullscreen'ed normally instead.
-      maximized: false
+      maximized: true
 
       # Whether to show fullscreen windows as always on top.
       shown_on_top: false
@@ -96,7 +96,9 @@ window_rules:
       - window_process: { equals: 'PowerToys.PowerAccent' }
       - window_process: { equals: 'Lively' }
         window_class: { regex: 'HwndWrapper*' }
-      # extra:
+  - commands: ["set-floating"]
+    match:
+      # voicemeter window cannot be resized, should instead be free-floating
       - window_process: { equals: "voicemeeter8" }
 
 binding_modes:
@@ -193,7 +195,7 @@ keybindings:
     bindings: ['alt+shift+q']
 
   # Kill GlazeWM process safely.
-  - commands: ['wm-exit']
+  - commands: ['wm-exit', "shell-exec %userprofile%/.glzr/zebar/stop.bat"]
     bindings: ['alt+shift+e']
 
   # Re-evaluate configuration file.
