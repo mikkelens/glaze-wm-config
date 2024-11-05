@@ -18,7 +18,7 @@ general:
     # - 'monitor_focus': Jump when focus changes between monitors.
     # - 'window_focus': Jump when focus changes between windows.
     # trigger: 'monitor_focus'
-    trigger: 'window_focus'
+    trigger: 'monitor_focus'
 
 gaps:
   # Gap between adjacent windows.
