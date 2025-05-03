@@ -100,6 +100,7 @@ window_rules:
     match:
       # voicemeter window cannot be resized, should be handled differently(?)
       - window_process: { equals: "voicemeeter8" }
+      - window_process: { regex: "Godot" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
